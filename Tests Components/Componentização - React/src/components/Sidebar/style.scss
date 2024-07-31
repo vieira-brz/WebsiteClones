@@ -1,0 +1,48 @@
+.sidebar {
+    height: 100%;
+    width: 230px;
+    padding: 0 10px;
+    background-color: white;
+    box-shadow: 0 0 10px #00000030;
+    max-height: 100vh;
+    overflow: auto;
+
+    .contents {
+        display: flex;
+        flex-direction: column;
+
+        .content-fields {
+            display: flex;
+            flex-direction: column;
+
+            .header {
+                gap: 10px;
+                display: flex;
+                color: #808080;
+                align-items: center;
+                margin: 30px 0 20px;
+                
+                .icon {
+                    font-size: 0;
+                }
+
+                .title {
+                    font-weight: 600;
+                }
+            }
+
+            &#dados-entrada .fields {
+                gap: 25px;
+                display: flex;
+                padding: 0 10px;
+                flex-direction: column;
+            }
+
+            &#dados-projeto .fields {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Theme -->
+    <script src="./js/index.js"></script>
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main>
+        <style>
+            .app {
+                position: relative;
+                padding: 1.7rem 0 2rem;
+                width: 100%;
+                min-height: 100vh;
+                overflow: hidden;
+                background-color: var(--backgroundColor);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .app.copy {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                animation: appear 1s 1 both;
+            }
+
+            @keyframes appear {
+                0% {
+                    clip-path: circle(30% at -25% -25%);
+                }
+
+                100% {
+                    clip-path: circle(150% at 0 0);
+                }
+            }
+        </style>
+        <div class="app light">
+
+            <style>
+                header {
+                    position: relative;
+                    z-index: 70;
+                    padding: 1.3rem;
+                    padding-left: 0;
+                    color: var(--mainText);
+                }
+
+                header .container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                header .logo {
+                    gap: 1rem;
+                    display: flex;
+                    align-items: center;
+                }
+
+                header .logo img {
+                    width: 50px;
+                }
+
+                header .logo h3 {
+                    font-size: 1.5rem;
+                }
+
+                header .links ul {
+                    gap: 4rem;
+                    display: flex;
+                    align-items: center;
+                }
+
+                header .links ul a {
+                    transition: .15s;
+                }
+
+                header .links ul a:hover {
+                    color: var(--hoverColor);
+                    transform: scale(1.05);
+                }
+
+                .overlay {
+                    display: none;
+                }
+
+                .burguer-menu {
+                    position: relative;
+                    z-index: 99;
+                    width: 2rem;
+                    height: 2rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    display: none;
+                }
+
+                .burguer-menu .bar {
+                    position: relative;
+                    width: 100%;
+                    height: 3px;
+                    background-color: var(--darkTwo);
+                    border-radius: 3px;
+                    transition: .5s;
+                }
+
+                .bar::before,
+                .bar::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--darkTwo);
+                    border-radius: 3px;
+                    transition: .5s;
+                }
+
+                .bar::before {
+                    transform: translateY(-8px);
+                }
+
+                .bar::after {
+                    transform: translateY(8px);
+                }
+
+                .app.active .burguer-menu .bar {
+                    background-color: transparent;
+                }
+
+                .app.active .burguer-menu .bar::before {
+                    transform: translateY(0) rotate(-45deg);
+                }
+
+                .app.active .burguer-menu .bar::after {
+                    transform: translateY(0) rotate(45deg);
+                }
+            </style>
+            <header>
+                <div class="container">
+                    <div class="logo">
+                        <img src="./assets/logo.png">
+                        <h3>Finance</h3>
+                    </div>
+
+                    <div class="links">
+                        <ul>
+                            <li><a href="#precos">Preços</a></li>
+                            <li><a href="#contatos">Contatos</a></li>
+                            <li><a href="#avaliacoes">Avaliações</a></li>
+                            <li><a href="#" class="btn">Registre-se</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="overlay"></div>
+
+                    <div class="burguer-menu">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </header>
+
+
+            <style>
+                #apresentation .container {
+                    display: grid;
+                    align-items: center;
+                    grid-template-columns: repeat(2, 1fr);
+                    color: var(--mainText);
+                }
+
+                #apresentation .left {
+                    line-height: 2rem;
+                }
+
+                #apresentation .left .titulo {
+                    line-height: 3rem;
+                    margin-bottom: 1rem;
+                    transition: 1.5s;
+
+                    opacity: 0;
+                    color: transparent;
+                    margin-top: -20%;
+                }
+
+                #apresentation .left .titulo h1 {
+                    font-size: 1.4rem;
+                }
+
+                #apresentation .left .titulo h2 {
+                    font-size: 1.6rem;
+                }
+
+                #apresentation .left .texto {
+                    margin-bottom: 1.5rem;
+                    transition: 1s;
+
+                    opacity: 0;
+                    margin-top: 50%;
+                }
+
+                #apresentation .left .cta {
+                    opacity: 0;
+                    margin-top: 30%;
+                    transition: 1s;
+                }
+
+                #apresentation .right img {
+                    width: 90%;
+                    transform: translateX(12.5%);
+                    transition: 2.5s;
+
+                    opacity: 0;
+                }
+            </style>
+            <section id="apresentation">
+                <div class="container">
+                    <div class="left">
+                        <div class="titulo" id="motion-apresentation-titulo">
+                            <h1>Economize, Invista, Conquiste</h1>
+                            <h2>Finanças Simples, Sonhos Possíveis.</h2>
+                        </div>
+                        <p class="texto" id="motion-apresentation-texto">
+                            O Finance é a ferramenta definitiva para você ter o controle total das suas finanças
+                            pessoais. Com uma interface intuitiva e recursos poderosos, nossa plataforma foi criada para
+                            tornar a gestão financeira pessoal mais fácil do que nunca.
+                        </p>
+                        <div class="cta" id="motion-apresentation-cta">
+                            <a href="#" class="btn">Comece agora</a>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <img src="./img/analisando-graficos.png" id="motion-apresentation-img">
+                    </div>
+                </div>
+            </section>
+
+
+            <style>
+                #precos .container {
+                    gap: 1rem;
+                    width: 80%;
+                    display: flex;
+                    margin: 10rem auto 5rem auto;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                #precos .card {
+                    position: relative;
+                    max-width: 300px;
+                    height: auto;
+                    min-width: 220px;
+                    cursor: pointer;
+                    background: var(--mainColor-gradient-sweet);
+                    border-radius: 15px;
+                    -webkit-border-radius: 15px;
+                    -moz-border-radius: 15px;
+                    -ms-border-radius: 15px;
+                    -o-border-radius: 15px;
+                    margin: 0 auto;
+                    padding: 30px 20px;
+                    box-shadow: 0 10px 15px rgba(0, 0, 0, .2);
+                    transition: .5s;
+                    -webkit-transition: .5s;
+                    -moz-transition: .5s;
+                    -ms-transition: .5s;
+                    -o-transition: .5s;
+                    overflow: hidden;
+                }
+
+                #precos .card:hover {
+                    transform: scale(1.1);
+                    -webkit-transform: scale(1.1);
+                    -moz-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                    -o-transform: scale(1.1);
+                }
+
+                #precos .card.active {
+                    transform: scale(1.2);
+                    -webkit-transform: scale(1.2);
+                    -moz-transform: scale(1.2);
+                    -ms-transform: scale(1.2);
+                    -o-transform: scale(1.2);
+                }
+
+                #precos .card.active:hover {
+                    transform: scale(1.3);
+                    -webkit-transform: scale(1.3);
+                    -moz-transform: scale(1.3);
+                    -ms-transform: scale(1.3);
+                    -o-transform: scale(1.3);
+                }
+
+                #precos .card:hover .assinatura {
+                    background: var(--effectColorHover);
+                }
+
+                #precos .card:before {
+                    content: '';
+                    position: absolute;
+                    bottom: 11.5px;
+                    left: 0;
+                    width: 100%;
+                    height: 40%;
+                    background: rgba(255, 255, 255, .2);
+                    z-index: 1;
+                    transform: skewY(-5deg) scale(1.5);
+                    -webkit-transform: skewY(-5deg) scale(1.5);
+                    -moz-transform: skewY(-5deg) scale(1.5);
+                    -ms-transform: skewY(-5deg) scale(1.5);
+                    -o-transform: skewY(-5deg) scale(1.5);
+                }
+
+                #precos .card .plano {
+                    text-align: center;
+                    color: var(--mainText);
+                }
+
+                #precos .card .plano .icone i {
+                    color: var(--backgroundColor);
+                    font-size: 30px;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    margin-bottom: .7rem;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    text-align: center;
+                    line-height: 50px;
+                    padding-right: 1px;
+                    background: var(--mainColor-gradient-sweet);
+                    box-shadow: 0 10px 10px rgba(0, 0, 0, .2);
+                }
+
+                #precos .card .preco {
+                    margin-top: 5px;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                #precos .card .preco h4 {
+                    margin: 0;
+                    padding: 15px 0;
+                    font-size: 2rem;
+                    text-align: center;
+                    color: var(--mainText);
+                }
+
+                #precos .card .preco h4 sup {
+                    font-size: 1rem;
+                }
+
+                #precos .card .preco h4 sup:nth-child(1) {
+                    font-size: 2rem;
+                }
+
+                #precos .card .beneficios ul li {
+                    gap: 10px;
+                    display: flex;
+                    line-height: 1.8rem;
+                    align-items: center;
+                }
+
+                #precos .card .beneficios ul li i {
+                    color: var(--effectColor);
+                }
+
+                #precos .assinatura {
+                    width: fit-content;
+                    padding: 5px 15px;
+                    z-index: 50;
+                    margin: 1.5rem auto 0 auto;
+                    border-radius: 4px;
+                    text-align: center;
+                    background: var(--effectColor);
+                    transition: .4s;
+                }
+
+                #precos .assinatura a {
+                    color: var(--backgroundColor);
+                }
+            </style>
+            <section id="precos">
+                <div class="container">
+                    <div class="card" id="precos-card-free">
+                        <div class="plano">
+                            <div class="icone">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <h2 class="texto">Free</h2>
+                        </div>
+                        <div class="preco">
+                            <h4><sup>R$ 0,00</sup> <sup>/ mês</sup></h4>
+                        </div>
+                        <div class="beneficios">
+                            <ul>
+                                <li><i class="fa fa-check" aria-hidden="true"></i>Controle de gastos</li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i>Controle de receitas</li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i>Relatório mensal</li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i>3 meses grátis</li>
+                            </ul>
+                        </div>
+                        <div class="assinatura">
+                            <a href="#">Mais detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="card active" id="precos-card-basic">
+                        <div class="plano">
+                            <div class="icone">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h2 class="texto">Basic</h2>
+                        </div>
+                        <div class="preco">
+                            <h4><sup>R$ 29,90</sup> <sup>/ mês</sup></h4>
+                        </div>
+                        <div class="beneficios">
+                            <ul>
+                                <li><i class="fa fa-check" aria-hidden="true"></i>Controle de gastos</li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i>Controle de receitas</li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i>Gráficos e relatórios</li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i>Planos e categorização</li>
+                            </ul>
+                        </div>
+                        <div class="assinatura">
+                            <a href="#">Mais detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="card" id="precos-card-premium">
+                        <div class="plano">
+                            <div class="icone">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h2 class="texto">Premium</h2>
+                        </div>
+                        <div class="preco">
+                            <h4><sup>R$ 79,90</sup> <sup>/ mês</sup></h4>
+                        </div>
+                        <div class="beneficios">
+                            <ul>
+                                <li><i class="fa fa-check" aria-hidden="true"></i>Controle total</li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i>Gráficos e relatórios</li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i>Planos e categorização</li>
+                                <li><i class="fa fa-check" aria-hidden="true"></i>Simulador e IA</li>
+                            </ul>
+                        </div>
+                        <div class="assinatura">
+                            <a href="#">Mais detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <style>
+                .toggle-theme {
+                    display: inline-block;
+                    background: var(--darkTwo);
+                    color: var(--backgroundColor);
+                    cursor: pointer;
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    font-size: 1.1rem;
+                    transition: .3s;
+                }
+
+                .toggle-theme i {
+                    line-height: 40px;
+                    color: var(--backgroundColor);
+                }
+
+                .toggle-theme:hover {
+                    background: var(--mainColor);
+                }
+
+                .app.light .toggle-theme i:last-child {
+                    display: none;
+                }
+
+                .app.light .toggle-theme i:first-child {
+                    display: block;
+                }
+
+                .app.dark .toggle-theme i:last-child {
+                    display: block;
+                }
+
+                .app.dark .toggle-theme i:first-child {
+                    display: none;
+                }
+            </style>
+            <div class="footer">
+                <div class="container">
+                    <button class="toggle-theme">
+                        <i class="far fa-moon"></i>
+                        <i class="far fa-sun"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <style>
+                @media screen and (max-width: 810px) {
+                    #apresentation .container {
+                        grid-template-columns: 1fr;
+                    }
+
+                    #apresentation .right {
+                        display: none;
+                    }
+                }
+
+                @media screen and (max-width: 900px) {
+                    .burguer-menu {
+                        display: flex;
+                    }
+
+                    header .links {
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                        max-width: 320px;
+                        width: 100%;
+                        height: 100%;
+                        background-color: var(--backgroundColor);
+                        z-index: 95;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transform: translateX(100%);
+                        transition: .5s;
+                    }
+
+                    header .links ul {
+                        gap: 2rem;
+                        flex-direction: column;
+                    }
+
+                    .overlay {
+                        display: block;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: #000000b3;
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: .5s;
+                    }
+
+                    .app.active header .links {
+                        transform: translateX(0);
+                        box-shadow: 0 0 50px 2px #00000066;
+                    }
+
+                    .app.active .overlay {
+                        pointer-events: all;
+                        opacity: 1;
+                    }
+
+                    #precos .container {
+                        gap: 5rem !important;
+                        flex-direction: column;
+                        margin: 8rem auto 5rem auto;
+                    }
+
+                    #precos .container .card {
+                        width: 280px;
+                        max-width: unset;
+                        font-size: .9rem;
+                    }
+
+                    #precos .container .card.active {
+                        transform: scale(1);
+                    }
+                    
+                    #precos .container .card.active:hover {
+                        transform: scale(1.1);
+                    }
+                    
+
+                    .footer {
+                        margin-top: 40px;
+                    }
+                }
+
+                @media screen and (max-width: 1240px) {
+                    #precos .container {
+                        gap: 2rem;
+                        width: 100%;
+                        justify-content: space-between;
+                    }
+
+                    #precos .container .card {
+                        min-width: unset;
+                        font-size: .9rem;
+                    }
+                }
+            </style>
+        </div>
+    </main>
+
+</body>
+
+</html>

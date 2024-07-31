@@ -1,0 +1,81 @@
+.contact {
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-bottom: -40px;
+    justify-content: center;
+
+    .container-items {
+        gap: 12vw;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -20px;
+        align-items: center;
+
+        .social-media {
+            list-style: none;
+
+            h3 {
+                position: relative;
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+                color: var(--color-two);
+            }
+
+            .container-images {
+                gap: -15px;
+                display: flex;
+                align-items: center;
+
+                a {
+                    text-decoration: none;
+
+                    img {
+                        width: 50px;
+                        opacity: .8;
+                        padding: 12px;
+                        margin: 0 -10px;
+                        border-radius: 20px;
+                        transform: scale(.6);
+                        transition: .15s ease-in-out;
+                        background: var(--background);
+                        border: 1px solid var(--subtext);
+
+                        &:hover {
+                            opacity: 1;
+                            background: var(--background-one);
+                            filter: brightness(1.5) grayscale(0);
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-me {
+            display: flex;
+            margin-top: 45px;
+            align-items: center;
+            justify-content: center;
+
+            button {
+                cursor: pointer;
+                min-width: 70px;
+                font-weight: 600;
+                padding: 15px 10px;
+                border-radius: 4px;
+                color: var(--subtext);
+                transition: .2s ease-out;
+                background: var(--background);
+                border: 1px solid var(--color-one);
+
+                &:hover {
+                    color: var(--background);
+                    background: var(--color);
+                    border-color: var(--color);
+                }
+            }
+        }
+    }
+}

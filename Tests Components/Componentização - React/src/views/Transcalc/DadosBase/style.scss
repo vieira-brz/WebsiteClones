@@ -1,0 +1,13 @@
+.dados-base {
+    background: white;
+    box-shadow: 0 0 10px #00000030;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+
+    .fields {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

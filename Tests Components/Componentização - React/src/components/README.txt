@@ -1,0 +1,1 @@
+Sempre que um componente tiver mais de 1 arquivo relacionado a ele, favor colocar em uma pasta especifica para ele!

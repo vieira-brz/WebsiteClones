@@ -1,0 +1,280 @@
+html {
+    --red: #e50914;
+    --background: #141414;
+    --white: #fff;
+    --white2: #e5e5e5;
+    --white2-hover: #b3b3b3;
+
+    /* Configs Gerais */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background: var(--background);
+    color: var(--white);
+
+    cursor: default;
+
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    font-size: 10px;
+    line-height: 1.2;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+* {
+    list-style: none;
+    border: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.none {
+    display: none;
+}
+
+/* HEADER */
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    height: auto;
+    min-height: 70px;
+    z-index: 2;
+
+    padding: 10px 60px;
+    transition: .3s ease;
+    box-shadow: inset 0px 30px 44px rgba(0, 0, 0, 0.2);
+}
+
+.toolbar.scrolled {
+    background-color: var(--background);
+}
+
+.toolbar .left {
+    display: flex;
+}
+
+.logo {
+    color: #e50914;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2em;
+    margin-right: 5px;
+    text-decoration: none;
+    vertical-align: middle;
+    font-weight: bold;
+    transform: matrix(1, 0, 0, 1.5, 0, 1);
+}
+
+.toolbar .logo {
+    margin-right: 2.5em;
+}
+
+.toolbar ul {
+    gap: 23.5px;
+    display: flex;
+    font-size: 1.37rem;
+    align-items: center;
+}
+
+.toolbar ul a {
+    display: flex;
+    align-items: center;
+    color: var(--white2);
+    height: 100%;
+    position: relative;
+    transition: color .4s;
+}
+
+.toolbar ul a.active {
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.toolbar ul a:hover {
+    color: var(--white2-hover);
+}
+
+.toolbar .tools {
+    display: flex;
+    align-items: center;
+    gap: 23.5px;
+}
+
+.toolbar .tools>p {
+    font-size: 1.3em;
+}
+
+.toolbar .tools .notifications>i,
+.toolbar .tools .navigation>i {
+    font-size: 2.2em;
+}
+
+.toolbar .tools .profile {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 10px;
+}
+
+.toolbar .tools .profile>i {
+    font-size: 1.5em;
+}
+
+.toolbar .tools .profile img {
+    height: 3em;
+}
+
+/* CARTAZ */
+
+.filme-cartaz {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: url('../images/lupin-brackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.filme-cartaz .sinopse {
+    position: relative;
+    top: 50%;
+    padding: 0 6rem;
+    max-width: 47%;
+    transform: translateY(-70%);
+}
+
+.filme-cartaz .sinopse .titulo {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.filme-cartaz .sinopse .top10-icone {
+    width: 5rem;
+}
+
+.filme-cartaz .sinopse .titulo>h3 {
+    font-size: 3rem;
+}
+
+.filme-cartaz .descricao {
+    font-size: 2.3rem;
+}
+
+.filme-cartaz .botoes {
+    position: absolute;
+    top: 70%;
+    display: flex;
+    align-items: center;
+    padding: 0 6rem;
+    gap: 1.5rem;
+}
+
+.filme-cartaz .botoes a {
+    border-radius: 4px;
+    font-size: 2.35rem;
+    font-weight: 500;
+    padding: 1.3rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filme-cartaz .botoes a:hover {
+    opacity: .8;
+}
+
+.filme-cartaz .botoes a i {
+    margin-right: 1.3rem;
+    font-size: 1.3em;
+}
+
+.filme-cartaz .botoes a.btn-branco {
+    background: var(--white);
+    color: var(--background);
+}
+
+.filme-cartaz .botoes a.btn-cinza {
+    background: #6b6b6bbe;
+    color: var(--white);
+}
+
+
+/* Sliders */
+.categorias {
+    z-index: 3;
+    margin-bottom: -70rem;
+    padding: 0 60px;
+}
+
+.categorias .so-netflix .slide-container {
+    overflow: hidden;
+}
+
+.categorias .card-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.categorias .card {
+    width: 300px;
+    height: 170px;
+}
+
+.categorias .card img {
+    width: 100%;
+    height: 100%;
+}
+
+.categorias .item .title>h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.8rem;
+}
+
+.categorias .item {
+    cursor: pointer;
+    margin-top: 6rem;
+}
+
+.categorias .item:first-child {
+    margin-top: 0;
+}
+
+.categorias .swiper-button-next {
+    color: var(--white);
+    font-weight: bold;
+    transform: scale(.7);
+    display: none;
+    transition: transform .4s ease;
+}
+
+.categorias .swiper-button-next:hover {
+    transform: scale(.9);
+}
+
+.categorias .title:hover .swiper-button-next {
+    display: unset;
+}

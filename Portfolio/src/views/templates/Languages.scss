@@ -1,0 +1,75 @@
+.languages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .range {
+        width: 300px;
+
+        input[type="range"] {
+            width: 100%;
+            appearance: none;
+            -webkit-appearance: none;
+
+            &::-webkit-slider-runnable-track {
+                height: 1px;
+                background: #5a5a5a;
+            }
+
+            &::-webkit-slider-thumb {
+                width: 11px;
+                height: 10px;
+                cursor: pointer;
+                appearance: none;
+                margin-top: -5px;
+                -webkit-appearance: none;
+                background: var(--color);
+                animation: rotateCube 5s infinite;
+            }
+
+            @keyframes rotateCube {
+                0% {
+                    transform: rotate(0);
+                }
+
+                50% {
+                    transform: rotate(360deg);
+                }
+
+                100% {
+                    transform: rotate(720deg);
+                }
+            }
+        }
+
+        .levels {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(4, calc(100% / 4));
+
+            span {
+                opacity: .5;
+                text-align: end;
+                padding: 12px 0;
+                color: var(--subtext);
+
+                &.active {
+                    opacity: 1;
+                    font-weight: bold;
+                    color: var(--color-one);
+                }
+
+                &:first-child {
+                    text-align: start;
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    text-align: center;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}

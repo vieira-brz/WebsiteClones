@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+
+    <title>Início - Netflix</title>
+</head>
+
+<body>
+
+    <div class="toolbar">
+        <div class="left">
+            <a href="#" class="logo">NETFLIX</a>
+
+            <ul class="list">
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="#">Séries</a></li>
+                <li><a href="#">Filmes</a></li>
+                <li><a href="#">Bombando</a></li>
+                <li><a href="#">Minha lista</a></li>
+                <li><a href="#">Navegar por idiomas</a></li>
+            </ul>
+        </div>
+
+        <div class="tools">
+            <div class="navigation">
+                <i class="fas fa-search"></i>
+                <div class="input-search none">
+                    <input type="text" placeholder="Títulos, gente e gêneros">
+                </div>
+            </div>
+
+            <p>Infantil</p>
+
+            <div class="notifications">
+                <i class="far fa-bell"></i>
+                <div class="menu none"></div>
+            </div>
+
+            <div class="profile">
+                <img src="data:image/png;base64,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"
+                    alt="profile-picture">
+                <i class="fas fa-caret-down"></i>
+                <div class="configurations none"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="filme-cartaz">
+        <div class="sinopse">
+            <img src="./images/lupin-text.png" class="titulo-filme">
+            <div class="titulo">
+                <svg viewBox="0 0 28 30" class="svg-icon svg-icon-top-10-badge top10-icone">
+                    <rect x="0" width="28" height="30" rx="3" fill="#e50914"></rect>
+                    <path
+                        d="M16.8211527,22.1690594 C17.4133103,22.1690594 17.8777709,21.8857503 18.2145345,21.3197261 C18.5512982,20.7531079 18.719977,19.9572291 18.719977,18.9309018 C18.719977,17.9045745 18.5512982,17.1081018 18.2145345,16.5414836 C17.8777709,15.9754594 17.4133103,15.6921503 16.8211527,15.6921503 C16.2289952,15.6921503 15.7645345,15.9754594 15.427177,16.5414836 C15.0904133,17.1081018 14.9223285,17.9045745 14.9223285,18.9309018 C14.9223285,19.9572291 15.0904133,20.7531079 15.427177,21.3197261 C15.7645345,21.8857503 16.2289952,22.1690594 16.8211527,22.1690594 M16.8211527,24.0708533 C15.9872618,24.0708533 15.2579042,23.8605988 14.6324861,23.4406836 C14.0076618,23.0207685 13.5247891,22.4262352 13.1856497,21.6564897 C12.8465103,20.8867442 12.6766436,19.9786109 12.6766436,18.9309018 C12.6766436,17.8921018 12.8465103,16.9857503 13.1856497,16.2118473 C13.5247891,15.4379442 14.0076618,14.8410352 14.6324861,14.4205261 C15.2579042,14.0006109 15.9872618,13.7903564 16.8211527,13.7903564 C17.6544497,13.7903564 18.3844012,14.0006109 19.0098194,14.4205261 C19.6352376,14.8410352 20.1169224,15.4379442 20.4566558,16.2118473 C20.7952012,16.9857503 20.9656618,17.8921018 20.9656618,18.9309018 C20.9656618,19.9786109 20.7952012,20.8867442 20.4566558,21.6564897 C20.1169224,22.4262352 19.6352376,23.0207685 19.0098194,23.4406836 C18.3844012,23.8605988 17.6544497,24.0708533 16.8211527,24.0708533"
+                        fill="#FFFFFF"></path>
+                    <polygon fill="#FFFFFF"
+                        points="8.86676 23.9094206 8.86676 16.6651418 6.88122061 17.1783055 6.88122061 14.9266812 11.0750267 13.8558085 11.0750267 23.9094206">
+                    </polygon>
+                    <path
+                        d="M20.0388194,9.42258545 L20.8085648,9.42258545 C21.1886861,9.42258545 21.4642739,9.34834303 21.6353285,9.19926424 C21.806383,9.05077939 21.8919103,8.83993091 21.8919103,8.56731273 C21.8919103,8.30122788 21.806383,8.09572485 21.6353285,7.94961576 C21.4642739,7.80410061 21.1886861,7.73104606 20.8085648,7.73104606 L20.0388194,7.73104606 L20.0388194,9.42258545 Z M18.2332436,12.8341733 L18.2332436,6.22006424 L21.0936558,6.22006424 C21.6323588,6.22006424 22.0974133,6.31806424 22.4906012,6.51465818 C22.8831952,6.71125212 23.1872921,6.98684 23.4028921,7.34142182 C23.6178982,7.69659758 23.7259952,8.10522788 23.7259952,8.56731273 C23.7259952,9.04246424 23.6178982,9.45762788 23.4028921,9.8122097 C23.1872921,10.1667915 22.8831952,10.4429733 22.4906012,10.6389733 C22.0974133,10.8355673 21.6323588,10.9335673 21.0936558,10.9335673 L20.0388194,10.9335673 L20.0388194,12.8341733 L18.2332436,12.8341733 Z"
+                        fill="#FFFFFF"></path>
+                    <path
+                        d="M14.0706788,11.3992752 C14.3937818,11.3992752 14.6770909,11.322063 14.9212,11.1664509 C15.1653091,11.0114327 15.3553697,10.792863 15.4913818,10.5107418 C15.6279879,10.2286206 15.695697,9.90136 15.695697,9.52717818 C15.695697,9.1535903 15.6279879,8.82573576 15.4913818,8.54361455 C15.3553697,8.26149333 15.1653091,8.04351758 14.9212,7.88790545 C14.6770909,7.73288727 14.3937818,7.65508121 14.0706788,7.65508121 C13.7475758,7.65508121 13.4642667,7.73288727 13.2201576,7.88790545 C12.9760485,8.04351758 12.7859879,8.26149333 12.6499758,8.54361455 C12.5139636,8.82573576 12.4456606,9.1535903 12.4456606,9.52717818 C12.4456606,9.90136 12.5139636,10.2286206 12.6499758,10.5107418 C12.7859879,10.792863 12.9760485,11.0114327 13.2201576,11.1664509 C13.4642667,11.322063 13.7475758,11.3992752 14.0706788,11.3992752 M14.0706788,12.9957842 C13.5634545,12.9957842 13.0995879,12.9090691 12.6784848,12.7344509 C12.2573818,12.5604267 11.8915152,12.3163176 11.5808848,12.0027176 C11.2708485,11.6891176 11.0314909,11.322063 10.8634061,10.9003661 C10.6953212,10.479263 10.6115758,10.0213358 10.6115758,9.52717818 C10.6115758,9.03302061 10.6953212,8.57568727 10.8634061,8.1539903 C11.0314909,7.73288727 11.2708485,7.36523879 11.5808848,7.05163879 C11.8915152,6.73803879 12.2573818,6.49452364 12.6784848,6.31990545 C13.0995879,6.14588121 13.5634545,6.05857212 14.0706788,6.05857212 C14.577903,6.05857212 15.0417697,6.14588121 15.4628727,6.31990545 C15.8839758,6.49452364 16.2498424,6.73803879 16.5604727,7.05163879 C16.871103,7.36523879 17.1098667,7.73288727 17.2779515,8.1539903 C17.4460364,8.57568727 17.5297818,9.03302061 17.5297818,9.52717818 C17.5297818,10.0213358 17.4460364,10.479263 17.2779515,10.9003661 C17.1098667,11.322063 16.871103,11.6891176 16.5604727,12.0027176 C16.2498424,12.3163176 15.8839758,12.5604267 15.4628727,12.7344509 C15.0417697,12.9090691 14.577903,12.9957842 14.0706788,12.9957842"
+                        fill="#FFFFFF"></path>
+                    <polygon fill="#FFFFFF"
+                        points="8.4639503 12.8342327 6.65837455 13.2666206 6.65837455 7.77862061 4.65323515 7.77862061 4.65323515 6.22012364 10.4690897 6.22012364 10.4690897 7.77862061 8.4639503 7.77862061">
+                    </polygon>
+                </svg>
+                <h3>Top 1 em séries hoje</h3>
+            </div>
+            <p class="descricao">
+                Inspirado pelas aventuras de Arsène Lupin, o ladrão gentil Assane Diop quer se vingar
+                de uma família rica por uma injustiça cometida contra o pai dele.
+            </p>
+        </div>
+        <div class="botoes">
+            <a href="#" class="btn-branco">
+                <i class="fas fa-play"></i>
+                Assistir
+            </a>
+            <a href="#" class="btn-cinza">
+                <i class="fas fa-info-circle"></i>
+                Mais informações
+            </a>
+        </div>
+    </div>
+
+    <!-- Sliders -->
+    <div class="categorias">
+
+        <div class="item so-netflix">
+            <div class="title">
+                <h3>Só na Netflix</h3>
+
+                <div class="swiper">
+                    <div class="slide-container">
+                        <div class="card-wrapper swiper-wrapper">
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-button-next swiper-navBtn" id="btn-so-netflix"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item em-alta">
+            <div class="title">
+                <h3>Em alta</h3>
+
+                <div class="swiper">
+                    <div class="slide-container">
+                        <div class="card-wrapper swiper-wrapper">
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-button-next swiper-navBtn" id="btn-em-alta"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item series">
+            <div class="title">
+                <h3>Séries</h3>
+
+                <div class="swiper">
+                    <div class="slide-container">
+                        <div class="card-wrapper swiper-wrapper">
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                            <div class="card swiper-slide">
+                                <img
+                                    src="./images/capa-filme.jpg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-button-next swiper-navBtn" id="btn-series"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="./js/swiper-bundle.min.js"></script>
+<script src="./js/script.js"></script>
+
+</html>

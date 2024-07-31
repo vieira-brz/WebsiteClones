@@ -1,0 +1,17 @@
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -5px;
+    width: 100%;
+
+    h4 {
+        font-weight: 600;
+        color: #9b9b9b;
+
+        span {
+            color: #1976d2;
+            font-weight: bold;
+        }
+    }
+}
